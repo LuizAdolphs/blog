@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Luiz Adolphs Blog
+title: luizinho
 subtitle:
 description:
 author: Luiz Adolphs
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://luizadolphs.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
