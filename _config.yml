@@ -3,11 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: luizinho
-subtitle:
+title: Luiz Adolphs
+subtitle: Programação e Legalzises!
 description:
 author: Luiz Adolphs
-language:
+language: 
+  - pt-BR
+  - en
 timezone:
 
 # URL
@@ -38,11 +40,21 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
+hljs:
+  enable: true #true to enable the plugin 
+  line_number: frontend # add line_number in frontend or backend 
+  trim_indent: backend # trim the indent of code block to prettify output. backend or front-end (recommend) 
+  copy_code: true # show copy code in caption. 
+  label:
+    left: Code
+    right: ':'
+    copy: Copy Code
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -80,7 +92,7 @@ deploy:
   type:
 
 # Blog
-keywords: Hexo,HTML,CSS,android,Linux
+keywords: .NET, ASP.NET,.NET CORE, ReactJS, AngularJS, Containers, Docker
 avatar: /images/favicon.png
 
 # Social Accounts
