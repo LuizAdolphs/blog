@@ -1,1 +1,1 @@
-docker run -w /app -it -v $PWD:/app microsoft/dotnet
+docker run -w /app -it -v $PWD:/app --entrypoint "/bin/bash" microsoft/dotnet -c cd /app && dotnet run
