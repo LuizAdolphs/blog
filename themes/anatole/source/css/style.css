@@ -138,6 +138,7 @@ a:hover, a:active {
 .sidebar {
   width: 40%;
   -webkit-background-size: cover;
+  background-image: url("/images/side.jpg");
   background-size: cover;
   background-color: #fff;
   height: 100%;
@@ -152,7 +153,7 @@ a:hover, a:active {
     padding-top: 240px; }
     .sidebar .logo-title .description {
       font-size: 14px;
-      color: #565654; }
+      color: #f2f2f2; }
     .sidebar .logo-title .logo {
       margin: 0 auto; }
     .sidebar .logo-title .title h3 {
@@ -163,7 +164,7 @@ a:hover, a:active {
       margin: 0; }
     .sidebar .logo-title .title a {
       text-decoration: none;
-      color: #464646;
+      color: #f2f2f2;
       font-size: 2rem;
       font-weight: bold; }
   .sidebar .social-links {
@@ -178,7 +179,7 @@ a:hover, a:active {
       padding: 0 4px;
       line-height: 0; }
     .sidebar .social-links a {
-      color: #565654; }
+      color: #f2f2f2; }
     .sidebar .social-links a:hover {
       color: #4786D6; }
 

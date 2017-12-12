@@ -4,8 +4,8 @@
 
 # Site
 title: Luiz Adolphs
-subtitle: Programação e Legalzises!
-description:
+subtitle: 
+description: Programação e Legalzises!
 author: Luiz Adolphs
 language: 
   - pt-BR
@@ -93,19 +93,19 @@ deploy:
 
 # Blog
 keywords: .NET, ASP.NET,.NET CORE, ReactJS, AngularJS, Containers, Docker
-avatar: /images/favicon.png
+avatar: /images/favicon-32x32.png
 
 # Social Accounts
-twitter: 
+twitter: luizadolphs
 rss: 
 weibo: 
 instagram: 
-github: 
-facebook: 
+github: LuizAdolphs
+facebook: luiz.adolphs.junior
 
 # Comment
 duoshuo: 
-disqus: 
+disqus: http-luizadolphs-github-io.disqus.com
 gentie: 
 # Valine comments https://valine.js.org
 valine:

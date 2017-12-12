@@ -195,6 +195,7 @@ a:hover, a:active {
 .sidebar {
 	width: 40%;
 	-webkit-background-size: cover;
+	background-image: url('/images/side.jpg');
 	background-size: cover;
 	background-color: #fff;
 	height: 100%;
@@ -212,7 +213,7 @@ a:hover, a:active {
 
 		.description {
 			font-size: 14px;
-			color: #565654;
+			color: #f2f2f2;
 		}
 
 
@@ -231,7 +232,7 @@ a:hover, a:active {
 
 			a {
 				text-decoration: none;
-				color: #464646;
+				color: #f2f2f2;
 				font-size: 2rem;
 				font-weight: bold;
 			}
@@ -256,7 +257,7 @@ a:hover, a:active {
 		}
 
 		a {
-			color: #565654;
+			color: #f2f2f2;
 		}
 		a:hover{
 			color: #4786D6;

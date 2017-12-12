@@ -1,6 +1,6 @@
 ---
 title: 'Brincando com coleções reativas em c#'
-date: 2017-12-10 18:30:48
+date: 2017-12-12 18:16:50
 tags:
 ---
 
@@ -262,7 +262,7 @@ private static IEnumerable<TResult> SelectIterator<TSource, TResult>(IEnumerable
 
 ```
 
-##Mas por que podemos dizer que este código é Reativo?
+### Mas por que podemos dizer que este código é Reativo?
 
 Quando tratamos de consultar uma coleção, que é nosso exemplo, podemos ter dois comportamentos possíveis: Reativo e Pró-ativo.
 
@@ -270,7 +270,7 @@ O pró-ativo é o comportamento que calcula os resultados possíveis antes mesmo
 
 Já a abordagem Reativa vai executando cada item da coleção e obtendo seu resultado à cada interação. Podemos dizer ao iterar há uma "Reação" interna de dentro da coleção que executa a posição corrente (e obtém seu resultado na hora, não anteriormente).
 
-##Um exemplo mais complexo
+### Um exemplo mais complexo
 
 Para este exemplo estou usando a API do [Pokémon](https://www.pokeapi.co) por ser free e não necessitar autenticação. Vamos implementar a necessidade de listar os 10 primeiros pokémons, sendo que a listagem deve cessar assim que encontrar o primeiro pokémon do tipo "fogo". Primeiro, vamos usar a abordagem pró-ativa:
 
@@ -377,3 +377,20 @@ Agora, vamos apenas tirar o `.ToList()` e permitir a chamada à API por interaç
 ```
 
 O resultando é bem diferente:
+
+```bash
+root@1083f7cca7e3:/app# dotnet run
+bulbasaur
+ivysaur
+venusaur
+charmander
+Tempo de execução: 10 segundos
+```
+
+Vale lembrar que certamente há melhores maneiras de consumir esta API e obter o mesmo resultado, mas desenvolvi assim para explicar melhor o conceito.
+
+### Conclusão
+
+Abordagens Reativas ou Pró-ativas são meios diferentes de se obter resultados numa linha de tempo. É errado perguntar quais das duas é melhor, pois dependendo do contexto é interessante utilizar um ou outro. O importante aqui é saber as diferenças e possibilidades de se trabalhar com ambas.
+
+Caso você queira, deixei meu código [aqui](https://github.com/LuizAdolphs/blog/tree/master/codes/reactiveCollection)
