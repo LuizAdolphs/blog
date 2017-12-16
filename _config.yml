@@ -90,7 +90,7 @@ theme: anatole
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://__GITHUB_TOKEN__@github.com/LuizAdolphs/luizadolphs.git
+  repo: https://__GITHUB_TOKEN__@github.com/LuizAdolphs/luizadolphs.github.io.git
   branch: master
 
 # Blog
