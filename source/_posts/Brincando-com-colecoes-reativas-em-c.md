@@ -91,6 +91,39 @@ root@1083f7cca7e3:/app# dotnet run
 Basicamente a mesma coisa. Vamos agora colocar uma 
 interação do usuário na expressão:
 
+```csharp
+using System;
+using System.Linq;
+using System.Collections;
+
+namespace reactiveCollection
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IEnumerable collection = Enumerable
+                .Range(0,10)
+                .Select(x => 
+                {
+                    Console.ReadLine();
+
+                    return x;
+                });
+
+            foreach (int item in collection)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+Resultado:
+
 ```bash
 root@1083f7cca7e3:/app# dotnet run
 
@@ -101,12 +134,24 @@ root@1083f7cca7e3:/app# dotnet run
 
 2
 
+3
 
+4
+
+5
+
+6
+
+7
+
+8
+
+9
 ```
 
 Algo interessante acontece... Eu normalmente esperaria pressionar 10x o Enter para então depois o `foreach` printar os números um por linha como nos testes anteriores. 
 
-Mas não é o que ocorre… A cada interação do `foreach`, a instrução de dentro do `Select` (isso é, o `Console.Readline()`) é executada… Isso acontece porque `Enumerables` (por consequência, `IQueriables`) só executam as expressões quando solicitadas através do `yield`. 
+Mas não é o que ocorre… A cada interação do `foreach`, a instrução de dentro do `Select` (isso é, o `Console.Readline()`) é executada… Isso acontece porque `Enumerables` (por consequência, `IQueriables`) só executam as expressões quando solicitadas através do `yield` (veja mais sobre o `yield` abaixo). 
 
 Um outro exemplo do que está acontecendo. Observa o seguinte código:
 
@@ -194,7 +239,7 @@ namespace reactiveCollection
                 .Range(0,10)
                 .Select(x => 
                 {
-                    Console.WriteLine("---------------------------Executando de dentro do Select");
+                    Console.WriteLine($"---------------------------Executando de dentro do Select da data { DateTime.Now.ToLongTimeString()}");
 
                     return x;
                 })
@@ -202,7 +247,7 @@ namespace reactiveCollection
 
             foreach (int item in collection)
             {
-                Console.WriteLine("Executando de fora do Select");
+                Console.WriteLine($"Executando de fora do Select { DateTime.Now.ToLongTimeString()}");
             }
 
             Console.ReadLine();
@@ -242,7 +287,7 @@ Executando de fora do Select 15:01:31
 
 Podemos perceber que o tempo total entre as duas execuções é basicamente o mesmo. Mas o output para o console é bem diferente.
 
-Esta é a implementação do codigo fonte do método `.Select` dentro de [`System.Linq`](https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Select.cs). É possível observar a utilizaçãp do `yield return` que indica, basicamente, que aquele ponto é o ponto de retorno para o interação corrente, isso é, o retorno é executado quantas vezes for necessário de acordo com a quantidade da coleção.
+Esta é o codigo fonte do método `.Select` dentro de [`System.Linq`](https://github.com/dotnet/corefx/blob/master/src/System.Linq/src/System/Linq/Select.cs). É possível observar a utilização do `yield return` que indica, basicamente, que aquele ponto é o ponto de retorno para o interação corrente, isso é, o retorno é executado quantas vezes for necessário de acordo com a quantidade da coleção.
 
 ```csharp
 
