@@ -151,7 +151,7 @@ root@1083f7cca7e3:/app# dotnet run
 
 ```
 
-Something interesting happens... I usually would expect pressing the Enter button 10 times for after that the `foreach` print the numbers each line like the previous code.
+Something interesting happens... I would usually expect pressing Enter button 10 times for after that the `foreach` print the numbers each line like the previous code.
 
 But is not what occurs... Each `foreach` interaction, the instruction passed to `Select` command (which is `Console.ReadLine()`) is executed... That happens because `Enumerables` (and by consequence `IQueryables`) only execute expressions when they are returned by `yield` (see more about `yield` bellow).
 
@@ -190,7 +190,7 @@ namespace reactiveCollection
 
 ```
 
-E o resultado:
+And the result is:
 
 ```bash
 
@@ -218,12 +218,11 @@ Executing outsite the Select 15:00:22
 
 ```
 
-This results indicates that, each interaction, the internal method passed to `Select` statement is executed.
+These results indicate that, each interaction, the internal method passed to `Select` statement is executed.
 
 This behavior give us some advantages in terms of processing. If the passed method is, for example, a heavy processing call, it would be executed when needed. If the loop were for some reason interrupted, lot of processing would be avoided.
 
-If there's need to execute the entire loop (and each preposition passed into `Select` statement) before iterate, just need to force it execution, like calling the `.ToList()` extension:
-
+When there's need to execute the entire loop (and each preposition passed into `Select` statement) before iterate, just need to force it execution, like calling the `.ToList()` extension:
 
 ```csharp
 
@@ -400,7 +399,7 @@ charmander
 Execution Duration: 36 seconds
 ```
 
-Now let's remove only the `.ToList()` and allow the API call only be made in each interaction (I will show only the part of code):
+Now let's remove only `.ToList()` and allow the API call only be made in each interaction (I will show only the part of code):
 
 ```csharp
 ...
