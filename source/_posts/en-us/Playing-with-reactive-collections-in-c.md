@@ -1,5 +1,5 @@
 ---
-title: Playing with reactive collections
+title: Playing with reactive collections in C#
 lang: en-us
 date: 2018-01-02 21:59:09
 tags:
@@ -218,11 +218,11 @@ Executing outsite the Select 15:00:22
 
 ```
 
-Este resultado nos indica que, a cada interação, o método interno do `Select` é executado.
+This results indicates that, each interaction, the internal method passed to `Select` statement is executed.
 
-Este comportamento nos dá diversas vantagens em termos de processamento. Se o método interno, por exemplo, fosse uma chamada um pouco mais pesada em termos de recursos computacionais, ela seria executada sob necessidade. Se por ventura o loop fosse parado no meio, processamento desnecessário seria evitado.
+This behavior give us some advantages in terms of processing. If the passed method is, for example, a heavy processing call, it would be executed when needed. If the loop were for some reason interrupted, lot of processing would be avoided.
 
-Caso fosse preciso executar todo o método `Select` antes de percorrer-lo, basta apenas forçar a interação dele com métodos de transformação, como por exemplo o `.ToList()`:
+If there's need to execute the entire loop (and each preposition passed into `Select` statement) before iterate, just need to force it execution, like calling the `.ToList()` extension:
 
 
 ```csharp
@@ -259,7 +259,7 @@ namespace reactiveCollection
 
 ```
 
-E o resultado vira:
+And the result becomes:
 
 ```bash
 
