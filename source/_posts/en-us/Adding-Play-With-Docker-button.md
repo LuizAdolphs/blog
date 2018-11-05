@@ -123,7 +123,7 @@ Where it says `https://raw.githubusercontent.com/LuizAdolphs/DiffTool/master/pwd
 
 And this is the result:
 
-![PWD button in README github page](/images/button-pwd.jpg)
+![PWD button in README github page](/images/button-pwd.png)
 
 Now just click in the button to be redirected to PWD webpage (which probably you need to logon using a docker account) running the repository stack!
 
