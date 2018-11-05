@@ -6,7 +6,7 @@ tags: [docker]
 
 Hello folks!
 
-It has been a while that I didn't write anything, but whit sunday I found something very nice to share about inside [Oren Yomtov's Medium article](https://medium.com/@patternrecognizer/how-to-add-a-try-in-play-with-docker-button-to-your-github-project-41cb65721e94).
+It has been a while that I didn't write anything, but this sunday I found something very nice to share about inside [Oren Yomtov's Medium article](https://medium.com/@patternrecognizer/how-to-add-a-try-in-play-with-docker-button-to-your-github-project-41cb65721e94), which is a simple way to test a software: run it inside "Play With Docker".
 
 I'm a huge fan of the [Play With Docker](https://labs.play-with-docker.com/) (PWD) for at least two big reasons:
 
