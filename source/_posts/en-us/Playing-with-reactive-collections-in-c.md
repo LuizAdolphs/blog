@@ -2,7 +2,7 @@
 title: Playing with reactive collections in C#
 lang: en-us
 date: 2018-01-02 21:59:09
-tags:
+tags: [csharp]
 ---
 
 Hello folks!
